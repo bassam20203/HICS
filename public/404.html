@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>توجيه</title>
+  <script>
+    // حفظ المسار الحالي في sessionStorage
+    sessionStorage.redirect = location.pathname;
+    // توجيه المستخدم إلى الصفحة الرئيسية
+    window.location.href = '/HICS'; // تأكد من أن هذا يتطابق مع basename
+  </script>
+</head>
+<body>
+  <p>جاري التوجيه...</p>
+</body>
+</html>
