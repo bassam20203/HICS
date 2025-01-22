@@ -1,0 +1,10 @@
+@font-face {
+    font-family: 'GE_SS_Two_Light' !important;
+    src: url('../public/FONT/GE_SS_Two_Light.otf') format('opentype'),
+    url('../public/FONT/GE_SS_Two_Medium.otf') format('opentype');
+  
+  }
+  
+  * {
+    font-family: 'GE_SS_Two_Light';
+  }
