@@ -1,0 +1,3 @@
+[submodule "HICS"]
+  path = HICS
+  url = https://github.com/bassam20203/HICS.git
