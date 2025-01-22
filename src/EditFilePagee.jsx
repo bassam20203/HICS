@@ -14,7 +14,7 @@ const EditFilePagee = () => {
       const fetchFileContent = async () => {
         try {
           const response = await fetch(
-            `http://localhost:5000/get-file?stage=${stage}`
+            `https://flask-two-gamma.vercel.app/get-file?stage=${stage}`
           );
           if (!response.ok) {
             throw new Error("حدث خطأ أثناء جلب محتوى الملف");
@@ -40,7 +40,7 @@ const EditFilePagee = () => {
 
   const handleSave = async () => {
     try {
-      const response = await fetch("http://localhost:5000/save-file", {
+      const response = await fetch("https://flask-two-gamma.vercel.app/save-file", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

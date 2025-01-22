@@ -17,12 +17,11 @@ const EditPage = () => {
     if (!rollNumber || !stage) return;
 
     try {
-      const response = await fetch("http://localhost:5000/get-result", {
-        method: "POST",
+      const response = await fetch(`https://flask-two-gamma.vercel.app/get-result?stage=${stage}&rollNumber=${rollNumber}`, {
+        method: "GET",
         headers: {
           "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ stage, rollNumber }),
+        }
       });
 
       const data = await response.json();
@@ -96,7 +95,7 @@ const EditPage = () => {
     };
 
     try {
-      const response = await fetch("http://localhost:5000/update-student", {
+      const response = await fetch("https://flask-two-gamma.vercel.app/update-student", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

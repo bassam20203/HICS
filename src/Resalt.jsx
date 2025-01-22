@@ -9,7 +9,6 @@ const Resalt = () => {
   const [result, setResult] = useState(null);
   const [noResult, setNoResult] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [showBanner, setShowBanner] = useState(true); // حالة عرض الشريط العلوي
 
   const handleStageChange = (e) => setStage(e.target.value);
   const handleSpecializationChange = (e) => setSpecialization(e.target.value);
@@ -21,11 +20,13 @@ const Resalt = () => {
     setResult(null);
 
     try {
-      const response = await fetch("http://localhost:5000/get-result", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ stage, specialization, rollNumber }),
-      });
+      const response = await fetch(
+`https://flask-two-gamma.vercel.app/get-result?stage=${stage}&rollNumber=${rollNumber}`,
+     {
+          method: "GET", 
+          headers: { "Content-Type": "application/json" },
+        }
+      );
       const data = await response.json();
       if (!data.student) {
         setNoResult(true);
@@ -56,9 +57,8 @@ const Resalt = () => {
     : [];
 
   return (
-
     <div className="resalt" dir="rtl">
-    <TopBanner />
+      <TopBanner />
       <div className="results-page">
         <h1>البحث عن نتائج الطلاب</h1>
         <div className="search-form">
