@@ -20,7 +20,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "git add .gitmodules
+git commit -m "Add .gitmodules file"": "gh-pages -d build"
   },
   "browserslist": {
     "production": [
